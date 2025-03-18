@@ -1,84 +1,74 @@
-# Project Folder - Grid Filter Project
+# Grid Filter Project
 
-## Description
-The Grid Filter Project is a Python application that implements a grid filtering algorithm using finite-difference time-domain (FDTD) simulation. It provides a convenient way to apply filters to grid data, which can be useful in various scientific and engineering applications.
+This project aims to demonstrate a grid filter process using Python. The grid filter process involves filtering data on a grid and can be utilized in various applications such as image processing, signal processing, and data analysis.
 
 ## Features
-- Finite-difference time-domain (FDTD) simulation
-- Grid filtering algorithm implementation
-- Easily customizable filters
+- Implement grid filtering algorithm
+- Process and filter data on a grid
+- Demonstrate application in data manipulation
 
-## How to Install and Run
-1. Clone the repository to your local machine:
-```bash
-git clone https://github.com/yourusername/grid_filter_project.git
-```
-2. Install the necessary dependencies:
-```bash
-pip install numpy matplotlib
-```
-3. Run the application:
-```bash
-python main.py
-```
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ProjectFolder/grid_filter_project.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd grid_filter_project
+   ```
+3. Install the dependencies:
+   ```bash
+   pip install numpy
+   ```
+
+## How to Run
+1. Run the main script:
+   ```bash
+   python main.py
+   ```
 
 ## Example Usage
+Here is a basic example of using the grid filter process in Python:
+
 ```python
-import numpy as np
-from fdtd_sim import FDTD
+import grid_filter
 
-# Create a sample grid data
-grid_data = np.random.rand(10, 10)
+# Define the data to be filtered
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-# Initialize FDTD simulation with the grid data
-simulation = FDTD(grid_data)
+# Apply the grid filter
+filtered_data = grid_filter.grid_filter(data)
 
-# Apply a filter to the grid data
-filtered_data = simulation.apply_filter()
-
-# Display the filtered data
 print(filtered_data)
 ```
 
 ## Code Highlights
 
-### fdtd_sim.py
-```python
-import numpy as np
-
-class FDTD:
-    def __init__(self, grid_data):
-        self.grid_data = grid_data
-
-    def apply_filter(self):
-        # Implement filter algorithm here
-        filtered_data = np.zeros_like(self.grid_data)
-        # Apply filter to grid data
-        return filtered_data
-```
-
 ### main.py
 ```python
 import numpy as np
-from fdtd_sim import FDTD
+import grid_filter
 
-# Create a sample grid data
-grid_data = np.random.rand(10, 10)
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+filtered_data = grid_filter.grid_filter(data)
 
-# Initialize FDTD simulation with the grid data
-simulation = FDTD(grid_data)
-
-# Apply a filter to the grid data
-filtered_data = simulation.apply_filter()
-
-# Display the filtered data
 print(filtered_data)
+```
+
+### grid_filter.py
+```python
+import numpy as np
+
+def grid_filter(data):
+    data_array = np.array(data)
+    filtered_data = data_array * 2  # Example grid filtering operation
+    return filtered_data.tolist()
 ```
 
 ## Contribution Guidelines
 1. Fork the repository
-2. Create a new branch (`git checkout -b feature`)
-3. Make your changes
-4. Commit your changes (`git commit -am 'Add new feature'`)
-5. Push to the branch (`git push origin feature`)
-6. Create a new Pull Request
+2. Create a new branch
+3. Make your contributions
+4. Commit your changes
+5. Push to the branch
+6. Submit a pull request
