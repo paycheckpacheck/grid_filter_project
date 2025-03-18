@@ -10,18 +10,12 @@ This project aims to demonstrate a grid filtering process using Python. The grid
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ProjectFolder/grid_filter_project.git
-   ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/ProjectFolder/grid... [Truncated]
    ```
    
 ## Example Usage
-1. Navigate to the project directory.
-2. Run `main.py` to execute the main script.
-   
-## Code Highlights
+To showcase the grid filtering process with this project, consider the following example snippets from the codebase.
+
 ### fdtd_sim.py
 ```python
 import numpy as np
@@ -29,15 +23,15 @@ import fdtd
 import matplotlib.pyplot as plt
 
 # Define simulation size (25x25 grid)
-grid_size = (25, 25, 1)
+grid_size = (25, 25, 1)  # 2D grid in the xy-plane with depth 1
 
 # Initialize the FDTD grid with the defined size
-grid = fdtd.Grid(shape=grid_size, grid_spacing=1e-6)
+grid = fdtd.Grid(shape=grid_size, grid_spacing=1e-6)  # Grid spacing is 1 micron
 
 # Material properties
+# Copper (approximate values at GHz frequencies)
 copper_permittivity = 1.0
 copper_permeability = 1.0
-
 # FR4
 fr4_permittivity = 4.5
 fr4_permeability... [Truncated]
@@ -60,19 +54,15 @@ def compute_transfer_function(s_params, frequency):
 def spatial_fft(transfer_function, grid_size=(25, 25)):
     """
     Compute the spatial FFT of the transfer function.
-    ... [Truncated]
+  ... [Truncated]
 ```
 
 ## Contribution Guidelines
-Contributions are welcome! Please follow these guidelines:
-- Fork the repository.
-- Create a new branch for your feature.
-- Make your changes.
-- Test your changes.
-- Submit a pull request.
+Contributions to the Grid Filter Project are welcome! To contribute, follow these steps:
+1. Fork the repository
+2. Create a new branch for your feature (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a new Pull Request
 
-Feel free to suggest new features or report issues by opening an issue.
-
----
-
-This README provides an overview of the grid filter project and how to install, run, and contribute to it. Explore the code snippets provided and contribute to the exciting world of grid filtering in Python!
+Let's collaborate and enhance the grid filtering process together!
