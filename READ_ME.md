@@ -11,64 +11,60 @@ This project aims to demonstrate a grid filter process using Python. The grid fi
 1. Clone the repository:
    ```bash
    git clone https://github.com/ProjectFolder/grid_filter_project.git
-   ```
-2. Navigate to the project directory:
-   ```bash
    cd grid_filter_project
    ```
-3. Install the dependencies:
-   ```bash
-   pip install numpy
-   ```
 
-## How to Run
-1. Run the main script:
-   ```bash
-   python main.py
-   ```
+### Example Usage
 
-## Example Usage
-Here is a basic example of using the grid filter process in Python:
-
+### fdtd_sim.py
 ```python
-import grid_filter
+import numpy as np
+import fdtd
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
 
-# Define the data to be filtered
-data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Define simulation size (25x25 grid)
+grid_size = (25, 25, 1)  # 2D grid in the xy-plane with depth 1
 
-# Apply the grid filter
-filtered_data = grid_filter.grid_filter(data)
+# Initialize the FDTD grid with the defined size
+grid = fdtd.Grid(shape=grid_size, grid_spacing=1e-6)  # Grid spacing is 1 micron
 
-print(filtered_data)
+# Material properties
+# Copper (approximate values at GHz frequencies)
+copper_permittivity = 1.0
+copper_permeability = 1.0
+# FR4
+fr4_permittivity = 4.5
+fr4_permeability... [Truncated]
 ```
-
-## Code Highlights
 
 ### main.py
 ```python
 import numpy as np
-import grid_filter
+import cv2
+import matplotlib.pyplot as plt
 
-data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-filtered_data = grid_filter.grid_filter(data)
+def compute_transfer_function(s_params, frequency):
+    """
+    Compute the transfer function from S-parameters at a given frequency.
+    This is a placeholder for the actual computation based on the application.
+    """
+    # Example: simple gain calculation
+    return np.abs(s_params) * np.exp(-1j * frequency)
 
-print(filtered_data)
-```
-
-### grid_filter.py
-```python
-import numpy as np
-
-def grid_filter(data):
-    data_array = np.array(data)
-    filtered_data = data_array * 2  # Example grid filtering operation
-    return filtered_data.tolist()
+def spatial_fft(transfer_function, grid_size=(25, 25)):
+    """
+    Compute the spatial FFT of the transfer function.
+    ... [Truncated]
 ```
 
 ## Contribution Guidelines
-1. Fork the repository
-2. Create a new branch
-3. Make your contributions
-4. Commit your changes
-5. Push to the branch
-6. Submit a pull request
+Contributions to the Grid Filter Project are welcome and encouraged. If you would like to contribute, please follow these guidelines:
+- Fork the repository and clone it to your local machine
+- Create a new branch for your feature or fix
+- Make your changes and ensure the code style is consistent
+- Add tests if applicable
+- Run the tests and ensure they pass
+- Submit a pull request detailing the changes made
+- Await feedback or approval for your contribution
+
+Let's collaborate to make the Grid Filter Project even more robust and versatile!
